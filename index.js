@@ -14,6 +14,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 
+app.get('/products', async (req,res)=>{
+    const products = await Product.find({})
+    res.render('products/index',{products})
+})
+
 app.listen(3000,()=>{
     console.log("App is listening on port 3000");
 })
