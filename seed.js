@@ -12,7 +12,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
 const seedProducts = [
     {
         name: 'Fairy Eggplant',
-        price: 1.00,
+        price: 1.99,
         category: 'vegetable'
     },
     {
