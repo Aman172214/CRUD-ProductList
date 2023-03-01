@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product</title>
+    <title>Edit Product</title>
 </head>
 <body>
-    <h1>Add Product</h1>
-    <form action="/products" method="post">
+    <h1>Edit</h1>
+    <form action="/products/<%= product._id %>?_method=put" method="post">
         <label for="name">Product Name</label>
-        <input type="text" name="name" id="name" placeholder="product name" >
+        <input type="text" name="name" id="name" placeholder="product name" value="<%= product.name %>">
         <label for="price">Product Price</label>
-        <input type="number" name="price" id="price" placeholder="product price" >
+        <input type="number" name="price" id="price" placeholder="product price" value="<%= product.price %>">
         <label for="name">Product Name</label>
         <select name="category" id="category">
             <option value="fruit">fruit</option>
@@ -20,7 +20,7 @@
             <option value="dairy">dairy</option>
         </select>
         <button>Submit</button>
-        <a href="/products">Cancel</a>
+        <a href="/products/<%= product._id %>">Cancel</a>
     </form>
 </body>
 </html>
